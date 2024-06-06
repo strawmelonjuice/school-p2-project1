@@ -1,0 +1,300 @@
+/* 
+    Author: MLC Bloeiman <@strawmelonjuice, mar@strawmelonjuice.com> 
+    Date: <date>
+    
+    <Subject>
+
+*/
+:root
+{
+    --kleur-1-hoofdkleuren: #0a68e2;
+    --kleur-2-hoofdkleuren: #154273;
+    --kleur-3-hoofdkleuren: #f0f8ffa8;
+    --kleur-4-hoofdkleuren: #000000a8;
+}
+
+@font-face
+{
+    font-family: "Josefin Sans";
+    src: url(../fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf);
+}
+
+@font-face
+{
+    font-family: "Fira Sans";
+    src: url(../fonts/Fira_Sans/FiraSans-Regular.ttf);
+}
+
+@font-face
+{
+    font-family: "Gantari";
+    src: url(../fonts/Gantari/Gantari-VariableFont_wght.ttf);
+}
+
+@font-face
+{
+    font-family: "Syne";
+    src: url(../fonts/Syne/Syne-VariableFont_wght.ttf);
+}
+
+/* Standaard lettertypes voor Mar-stijl */
+body
+{
+    font-family: "Josefin Sans", "Fira Sans";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.speciaal
+{
+    font-family: "Gantari", "Syne";
+}
+
+/* Einde standaard lettertypes voor Mar-stijl */
+footer,
+header,
+main,
+nav
+{
+    width: 100svw;
+    left: 0px;
+    position: absolute;
+}
+
+nav
+{
+    background-color: rgb(97, 233, 188);
+    top: 6vh;
+    height: 4vh;
+
+    a
+    {
+        display: block;
+        width: fit-content;
+        background-color: aquamarine;
+        float: right;
+        margin: none;
+        text-align: center;
+        padding: 12px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    a:hover
+    {
+        background-color: #ffe4c4;
+        color: var(--kleur-1-hoofdkleuren);
+    }
+}
+
+main
+{
+    background-color: var(--kleur-3-hoofdkleuren);
+    top: 10vh;
+    height: 82vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+
+    #categori\ën
+    {
+        background-color: var(--kleur-2-hoofdkleuren);
+        margin: 8vw;
+        padding: 6%;
+        border-radius: 20px;
+
+        > div
+        {
+            display: grid;
+            grid-template-rows: 50% 50%;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            gap: 1vh;
+
+            > div
+            {
+                gap: 1vw;
+                display: grid;
+                grid-template-columns: 33.33% 33.33% 33.33%;
+
+                > div
+                {
+                    border-radius: 30px;
+                    text-align: center;
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    line-height: 10svh;
+                    font-size: 21px;
+                    height: 10svh;
+                    background-color: #f0f8ff;
+                    background-repeat: no-repeat;
+                    color: #f0f8ff;
+                    --schaduw: black;
+                    text-shadow: 5px 3px 4px var(--schaduw), -7px -6px 4px var(--schaduw), 7px 6px 4px var(--schaduw);
+                    background-size: cover;
+                    display: inline-grid;
+                    /* width: 14VW; */
+                }
+
+                .lang
+                {
+                    font-size: 19px;
+                    line-height: 6svh;
+                }
+            }
+        }
+    }
+}
+
+footer
+{
+    height: 8vh;
+    bottom: 0px;
+
+    div
+    {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        p
+        {
+            position: fixed;
+            bottom: 0px;
+        }
+
+        div
+        {
+            left: 0px;
+            position: absolute;
+            width: 100VW;
+            background-color: rgb(97, 233, 188);
+            top: 0px;
+
+            height: 4vh;
+
+            a
+            {
+                display: block;
+                width: fit-content;
+                background-color: aquamarine;
+                float: left;
+                margin: none;
+                text-align: center;
+                padding: 12px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+            a:hover
+            {
+                background-color: #ffe4c4;
+                color: var(--kleur-1-hoofdkleuren);
+            }
+
+        }
+    }
+}
+
+header
+{
+    background-color: var(--kleur-1-hoofdkleuren);
+    top: 0px;
+
+    height: 6vh;
+
+    > svg
+    {
+        height: 6vh;
+        width: fit-content;
+        left: 40vw;
+        right: 40vw;
+        position: fixed;
+
+        .st0
+        {
+            fill: none;
+        }
+
+        .st1
+        {
+            fill: var(--kleur-2-hoofdkleuren);
+        }
+
+        .st2
+        {
+            fill: #ffffff;
+        }
+    }
+
+    > div
+    {
+        background-color: var(--kleur-2-hoofdkleuren);
+        width: 20vw;
+        height: 100%;
+        float: right;
+        align-items: center;
+
+        > div
+        {
+            background-color: white;
+            width: 2vw;
+            height: 100%;
+            align-self: center;
+            margin-right: 7vw;
+            margin-left: 12vw;
+        }
+    }
+}
+
+/* Plaatst de h2 en de P eronder tegen elkaar aan. */
+#popheader1
+{
+    margin-bottom: 0px;
+
+    + p
+    {
+        margin-top: 0px;
+    }
+}
+
+#over-ons
+{
+    background-color: var(--kleur-1-hoofdkleuren);
+    bottom: 0px;
+    padding: 10%;
+}
+
+#links
+{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    width: 100SVW;
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    > ul
+    {
+        display: inline-grid;
+    }
+
+    > ul > li
+    {
+        list-style-type: none;
+        font-size: 1.3125rem;
+        font-weight: 400;
+        line-height: 1.75rem;
+        margin-bottom: .5rem;
+    }
+
+    div > ul > ul > li
+    {}
+
+    --diemargin: 5vh;
+    margin-top: var(--diemargin);
+    margin-bottom: var(--diemargin);
+}
