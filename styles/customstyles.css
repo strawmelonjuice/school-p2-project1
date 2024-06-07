@@ -1,0 +1,38 @@
+/* 
+    Author: MLC Bloeiman <@strawmelonjuice, mar@strawmelonjuice.com> 
+    Date: <date>
+    
+    Stylesheet voor "odd ones out" binnen project
+
+*/
+
+/* About me-TLDR blokje */
+p.tldr
+{
+    --tldr-height: 16px;
+    font-size: 95%;
+    background-color: var(--color-slot-15);
+    border: 2px dotted;
+    border-top-color: currentcolor;
+    border-right-color: currentcolor;
+    border-bottom-color: currentcolor;
+    border-left-color: currentcolor;
+    border-color: var(--color-slot-12);
+    color: var(--color-slot-16);
+    font-family: 'Ubuntu Mono', monospace;
+    width: fit-content;
+    height: var(--tldr-height);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: var(--tldr-height);
+}
+
+p.tldr::before
+{
+    content: "TLDR: ⬇️";
+    position: absolute;
+    top: var(--tldr-height);
+    /* left: 100%; */
+    margin-top: -5px;
+    border-width: 5px;
+}
