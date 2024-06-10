@@ -1,0 +1,16 @@
+{
+  "menuItems": [
+    {
+      "title": "Home",
+      "link": "/"
+    },
+    {
+      "title": "About me",
+      "link": "/pages/aboutme.html"
+    },
+    {
+      "title": "Results",
+      "link": "/pages/aboutme/results.html"
+    }
+  ]
+}
