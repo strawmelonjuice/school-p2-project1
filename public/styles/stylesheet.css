@@ -253,6 +253,7 @@ footer {
 
 #menu.ready:hover,
 #menu.ready.unfolded {
+  border-radius: 30px;
   position: fixed;
   right: 0;
   bottom: 0;
@@ -338,7 +339,8 @@ footer {
   }
 }
 
-#menu nav {
+#menu:hover,
+#menu nav:hover {
   transition: all ease 4s;
 }
 
