@@ -94,10 +94,6 @@ request.onload = function () {
           // Maar ik gebruik toch liever een 'for ...of'-loop.
           for (var i = 0; i <= cijfersInTabelVormigeArray.length; i++) {
             var ditVak = cijfersInTabelVormigeArray[i];
-            var vaknaam = ditVak[0];
-            var cijferHuiswerk = ditVak[1];
-            var cijferPraktijk = ditVak[2];
-            var cijferProject = ditVak[3];
             // We maken hier een variabele. Browsers als Firefox evalueren en corrigeren geinjecteerde HTML, wat betekend dat als we dit direct invoegen, de <tr> al gesloten is voor haar inhoud.
             var inTePlakken = "<tr>";
             // Hier laten we de while loop eens zien
