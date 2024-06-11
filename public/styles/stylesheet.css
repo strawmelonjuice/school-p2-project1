@@ -8,77 +8,69 @@
 @import url(/styles/customstyles.css);
 
 /** Color palette */
-:root
-{
-    /* Dark-mode first design principle, even though my light mode is pretty great! */
-    --page-background-color: #231820;
-    --header-background-color: #800046;
-    --header-text-color: #E0E1EC;
-    --main-background-color: #4e4d4d;
-    --main-text-color: #FCCBCB;
-    --main-section-background-color: var(--main-text-color);
+:root {
+  /* Dark-mode first design principle, even though my light mode is pretty great! */
+  --page-background-color: #231820;
+  --header-background-color: #800046;
+  --header-text-color: #e0e1ec;
+  --main-background-color: #4e4d4d;
+  --main-text-color: #fccbcb;
+  --main-section-background-color: var(--main-text-color);
+  --main-section-text-color: black;
+  --bottom-menubar-background-color: #b38888;
+  --bottom-menubar-text-color: var(--main-section-text-color);
+
+  @media (prefers-color-scheme: light) {
+    --page-background-color: #b88f9d;
+    --header-background-color: #7c5e64;
+    --main-background-color: #e0e1ec;
+    --main-text-color: #7c5e64;
+    --main-section-background-color: var(--bottom-menubar-background-color);
     --main-section-text-color: black;
-    --bottom-menubar-background-color: #B38888;
+    --bottom-menubar-background-color: #dab2bb;
     --bottom-menubar-text-color: var(--main-section-text-color);
+  }
 
-    @media (prefers-color-scheme: light)
-    {
-        --page-background-color: #b88f9d;
-        --header-background-color: #7C5E64;
-        --main-background-color: #e0e1ec;
-        --main-text-color: #7C5E64;
-        --main-section-background-color: var(--bottom-menubar-background-color);
-        --main-section-text-color: black;
-        --bottom-menubar-background-color: #DAB2BB;
-        --bottom-menubar-text-color: var(--main-section-text-color);
-    }
-
-    --footer-height: 7VH;
-    --header-height: 4VH;
+  --footer-height: 7vh;
+  --header-height: 4vh;
 }
 
-@font-face
-{
-    font-family: "Lexend";
-    src: url(../fonts/Lexend/Lexend-VariableFont_wght.ttf);
+@font-face {
+  font-family: "Lexend";
+  src: url(../fonts/Lexend/Lexend-VariableFont_wght.ttf);
 }
 
-@font-face
-{
-    font-family: "Josefin Sans";
-    src: url(../fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf);
+@font-face {
+  font-family: "Josefin Sans";
+  src: url(../fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf);
 }
 
-@font-face
-{
-    font-family: "Fira Sans";
-    src: url(../fonts/Fira_Sans/FiraSans-Regular.ttf);
+@font-face {
+  font-family: "Fira Sans";
+  src: url(../fonts/Fira_Sans/FiraSans-Regular.ttf);
 }
 
-@font-face
-{
-    font-family: "Gantari";
-    src: url(../fonts/Gantari/Gantari-VariableFont_wght.ttf);
+@font-face {
+  font-family: "Gantari";
+  src: url(../fonts/Gantari/Gantari-VariableFont_wght.ttf);
 }
 
-@font-face
-{
-    font-family: "Syne";
-    src: url(../fonts/Syne/Syne-VariableFont_wght.ttf);
+@font-face {
+  font-family: "Syne";
+  src: url(../fonts/Syne/Syne-VariableFont_wght.ttf);
 }
 
-body
-{
-    background-color: var(--page-background-color);
-    font-family: "Lexend", "Josefin Sans", "Fira Sans";
-    display: block;
-    margin: 0;
-    padding: 0;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+body {
+  background-color: var(--page-background-color);
+  font-family: "Lexend", "Josefin Sans", "Fira Sans";
+  display: block;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 
 h1,
@@ -87,305 +79,265 @@ h3,
 h4,
 h5,
 h6,
-.speciaal
-{
-    font-family: "Gantari", "Syne";
+.speciaal {
+  font-family: "Gantari", "Syne";
 }
 
-main
-{
-    display: block;
+main {
+  display: block;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: auto;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90vw;
+  height: calc(90vh - var(--header-height) - var(--footer-height));
+
+  @media screen and (orientation: landscape) and (min-width: 1000px) {
+    width: 90vw;
+    height: calc(87vh - var(--header-height) - var(--footer-height));
+  }
+
+  div {
+    background-color: var(--main-background-color);
+    color: var(--main-text-color);
+    height: 95%;
+    border-radius: 10px;
+    width: 95%;
+    overflow-y: auto;
+    margin: auto;
+    padding: 1rem;
+  }
+}
+
+header {
+  position: fixed;
+  /* Mobile/default top distance */
+  top: 1rem;
+  /* Mobile/default left distance */
+  left: 1rem;
+  /* Mobile/default width */
+  width: 85vw;
+
+  @media screen and (orientation: landscape) and (min-width: 1000px) {
+    /* Desktop top distance */
+    top: 0.5cm;
+    /* Desktop left distance */
+    left: 2.5cm;
+    /* Desktop width */
+    width: 25vw;
+  }
+
+  border-radius: 15px;
+  height: var(--header-height);
+  background-color: var(--header-background-color);
+  color: var(--header-text-color);
+  text-align: left;
+  margin: 0;
+  padding: 2vh;
+  display: block;
+
+  h1 {
+    font-size: 2em;
+    line-height: var(--header-height);
+    margin: 0;
     padding: 0;
-    margin: 0;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin-bottom: auto;
-    margin-top: auto;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90VW;
-    height: calc(90VH - var(--header-height) - var(--footer-height));
-
-
-    @media screen and (orientation: landscape) and (min-width: 1000px)
-    {
-        width: 90VW;
-        height: calc(87VH - var(--header-height) - var(--footer-height));
-    }
-
-
-    div
-    {
-        background-color: var(--main-background-color);
-        color: var(--main-text-color);
-        height: 95%;
-        border-radius: 10px;
-        width: 95%;
-        overflow-y: auto;
-        margin: auto;
-        padding: 1rem;
-    }
-}
-
-
-header
-{
-    position: fixed;
-    /* Mobile/default top distance */
-    top: 1rem;
-    /* Mobile/default left distance */
-    left: 1rem;
-    /* Mobile/default width */
-    width: 85VW;
-
-    @media screen and (orientation: landscape) and (min-width: 1000px)
-    {
-        /* Desktop top distance */
-        top: 0.5cm;
-        /* Desktop left distance */
-        left: 2.5cm;
-        /* Desktop width */
-        width: 25VW;
-    }
-
-
-    border-radius: 15px;
-    height: var(--header-height);
-    background-color: var(--header-background-color);
-    color: var(--header-text-color);
-    text-align: left;
-    margin: 0;
-    padding: 2VH;
     display: block;
-
-    h1
-    {
-        font-size: 2em;
-        line-height: var(--header-height);
-        margin: 0;
-        padding: 0;
-        display: block;
-
-    }
+  }
 }
 
+footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 80vw;
+  height: var(--footer-height);
+  border-radius: 30px 0 0 0;
+  text-align: center;
+  margin: 0%;
+  padding: 0%;
+  display: block;
+  overflow: clip;
+}
 
-footer
-{
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    width: 80VW;
-    height: var(--footer-height);
-    border-radius: 30px 0 0 0;
+#menu:not(:hover, .unfolded) {
+  background-color: var(--bottom-menubar-background-color);
+  color: var(--bottom-menubar-text-color);
+  width: 80vw;
+  height: var(--footer-height);
+  padding: 0;
+  margin: 0;
+  display: block;
+  float: right;
+
+  #closemenu {
+    display: none;
+  }
+
+  #openmenu {
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
     text-align: center;
-    margin: 0%;
-    padding: 0%;
-    display: block;
-    overflow: clip;
-}
-
-#menu:not( :hover,
-    .unfolded)
-{
-    background-color: var(--bottom-menubar-background-color);
-    color: var(--bottom-menubar-text-color);
-    width: 80VW;
+    margin: 0;
     height: var(--footer-height);
+    width: 20%;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  nav {
     padding: 0;
     margin: 0;
-    display: block;
+    display: none;
+    height: var(--footer-height);
+    width: 100%;
+    overflow: hidden;
+  }
+
+  nav ul {
+    padding: 0;
+    margin: 0;
+    height: var(--footer-height);
+    width: 80%;
+    overflow: hidden;
     float: right;
+  }
 
-    #closemenu
-    {
-        display: none;
+  nav ul li {
+    margin: 0;
+    line-height: calc(var(--footer-height) / 2);
+    list-style-type: none;
+    float: right;
+    height: var(--footer-height);
+    width: 20%;
+    text-align: center;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 14px 16px;
+    color: var(--bottom-menubar-text-color);
+    text-decoration: none;
+  }
+
+  nav ul li.active {
+    background-color: var(--header-background-color);
+
+    a {
+      color: var(--header-text-color);
+    }
+  }
+
+  nav ul li:hover {
+    background-color: var(--main-text-color);
+  }
+
+  /* Mobile-first: Exceptions to make when not using a mobile screen. */
+  @media screen and (orientation: landscape) and (min-width: 1000px) {
+    #openmenu {
+      display: none;
     }
 
-
-
-    #openmenu
-    {
-        display: block;
-        padding: 14px 16px;
-        text-decoration: none;
-        text-align: center;
-        margin: 0;
-        height: var(--footer-height);
-        width: 20%;
-        font-size: 30px;
-        font-weight: bold;
+    nav {
+      display: block;
     }
-
-    nav
-    {
-        padding: 0;
-        margin: 0;
-        display: none;
-        height: var(--footer-height);
-        width: 100%;
-        overflow: hidden;
-    }
-
-    nav ul
-    {
-        padding: 0;
-        margin: 0;
-        height: var(--footer-height);
-        width: 80%;
-        overflow: hidden;
-        float: right;
-    }
-
-    nav ul li
-    {
-        margin: 0;
-        line-height: calc(var(--footer-height) / 2);
-        list-style-type: none;
-        float: right;
-        height: var(--footer-height);
-        width: 20%;
-        text-align: center;
-    }
-
-    nav ul li a
-    {
-        display: block;
-        padding: 14px 16px;
-        color: var(--bottom-menubar-text-color);
-        text-decoration: none;
-    }
-
-    nav ul li.active
-    {
-        background-color: var(--header-background-color);
-
-        a
-        {
-            color: var(--header-text-color);
-        }
-    }
-
-    nav ul li:hover
-    {
-        background-color: var(--main-text-color);
-    }
-
-    /* Mobile-first: Exceptions to make when not using a mobile screen. */
-    @media screen and (orientation: landscape) and (min-width: 1000px)
-    {
-        #openmenu
-        {
-            display: none;
-        }
-
-        nav
-        {
-            display: block;
-        }
-    }
+  }
 }
-
 
 #menu.ready:hover,
-#menu.ready.unfolded
-{
-    position: fixed;
+#menu.ready.unfolded {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  background-color: var(--bottom-menubar-background-color);
+  color: var(--bottom-menubar-text-color);
+
+  #closemenu {
+    cursor: pointer;
+    position: absolute;
+    right: 10vw;
+    font-size: 2em;
+    top: 10vh;
+    padding: 0.5em;
+    margin: 0%;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+  }
+
+  #openmenu {
+    display: none;
+  }
+
+  nav {
+    position: absolute;
+    left: 0;
     right: 0;
+    top: 0;
     bottom: 0;
-    width: 100VW;
-    height: 100VH;
-    z-index: 5;
-    background-color: var(--bottom-menubar-background-color);
+    margin: auto;
+    /* Default/mobile height */
+    height: 70vh;
+    /* Default/mobile width */
+    width: 90vw;
+
+    @media screen and (orientation: landscape) and (min-width: 1000px) {
+      /* Desktop  */
+      height: 60vh;
+      width: 60vw;
+    }
+
+    overflow-y: auto;
+  }
+
+  nav ul {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  nav ul li {
+    margin: 0;
+    line-height: calc(var(--footer-height) / 2);
+    list-style-type: none;
+    height: var(--footer-height);
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul li.active a::after {
+    content: " (current)";
+    margin: auto;
+    /* font-size: 1.5em; */
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 14px 16px;
     color: var(--bottom-menubar-text-color);
+    text-decoration: none;
+  }
 
-    #closemenu
-    {
-        cursor: pointer;
-        position: absolute;
-        right: 10VW;
-        font-size: 2em;
-        top: 10VH;
-        padding: 0.5em;
-        margin: 0%;
-        width: 3rem;
-        height: 3rem;
-        border-radius: 100%;
-    }
+  nav ul li:hover,
+  #closemenu:hover {
+    background-color: var(--main-text-color);
+  }
 
+  #closemenu:hover {
+    color: red;
+  }
+}
 
-    #openmenu
-    {
-        display: none;
-    }
-
-
-    nav
-    {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        /* Default/mobile height */
-        height: 70VH;
-        /* Default/mobile width */
-        width: 90VW;
-
-        @media screen and (orientation: landscape) and (min-width: 1000px)
-        {
-            /* Desktop  */
-            height: 60VH;
-            width: 60VW;
-        }
-
-        overflow-y: auto;
-    }
-
-    nav ul
-    {
-        padding: 0;
-        margin: 0;
-        width: 100%;
-    }
-
-    nav ul li
-    {
-        margin: 0;
-        line-height: calc(var(--footer-height) / 2);
-        list-style-type: none;
-        height: var(--footer-height);
-        width: 100%;
-        text-align: center;
-    }
-
-    nav ul li.active a::after
-    {
-        content: " (current)";
-        margin: auto;
-        /* font-size: 1.5em; */
-    }
-
-    nav ul li a
-    {
-        display: block;
-        padding: 14px 16px;
-        color: var(--bottom-menubar-text-color);
-        text-decoration: none;
-    }
-
-    nav ul li:hover,
-    #closemenu:hover
-    {
-        background-color: var(--main-text-color);
-    }
-
-    #closemenu:hover
-    {
-        color: red;
-    }
+table {
+  border: currentColor solid 2px;
 }

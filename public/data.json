@@ -12,5 +12,13 @@
       "title": "Results",
       "link": "/pages/aboutme/results.html"
     }
-  ]
+  ],
+  "schoolResults": {
+    "1": {
+      "REA": [5.0, 8.0, 7.3],
+      "PNO": [7.1, 7.2, 7.5],
+      "TNV": [1.8, 5.1, 2.7],
+      "COV": [9.8, 9.3, 4.7]
+    }
+  }
 }

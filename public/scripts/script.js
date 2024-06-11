@@ -56,6 +56,21 @@ request.onload = function () {
         console.log("This is the results page...");
         const mainElem = document.querySelector("main>div");
         mainElem.innerHTML = "<p>Loading results...</p>";
+        mainElem.innerHTML = `
+          
+<table>
+<thead>
+    <tr>A</tr>
+    <tr>B</tr>
+    <tr>C</tr></thead>
+  <tbody>
+<tr>D</tr>
+    <tr>E</tr>
+    <tr>F</tr>
+  </tbody>
+          </table>
+
+          `;
       }
     })(JSON.parse(request.responseText));
   } else {
