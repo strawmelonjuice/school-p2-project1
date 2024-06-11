@@ -338,6 +338,12 @@ footer {
   }
 }
 
-table {
+#menu nav {
+  transition: all ease 4s;
+}
+
+table,
+td {
+  border-collapse: collapse;
   border: currentColor solid 2px;
 }

@@ -55,23 +55,66 @@ request.onload = function () {
       if (pageTitle === "Results") {
         console.log("This is the results page...");
         const mainElem = document.querySelector("main>div");
-        mainElem.innerHTML = "<p>Loading results...</p>";
-        mainElem.innerHTML = `
-          
-<table>
-<thead>
-    <tr>A</tr>
-    <tr>B</tr>
-    <tr>C</tr></thead>
-  <tbody>
-<tr>D</tr>
-    <tr>E</tr>
-    <tr>F</tr>
-  </tbody>
-          </table>
+        function LaadDeTabel(periode) {
+          var cijfersVanPeriode = globaleVariabelen.schoolResults[periode];
+          mainElem.innerHTML =
+            '<table><thead><tr><td></td><td>Huiswerk</td><td>Praktijk</td><td>Project</td></tr></thead><tbody id="workingResult"></tbody></table>';
+          // Omdat ik alle uitleg zag werken met een Array in deze vorm, wat niet per se super handig is als je met data werkt... Heb ik het ook gedaan.
+          // Hier worden de cijfers dus in een array in een array gestopt.
+          // // Realiseren
+          var cijfersInTabelVormigeArray = [
+            [
+              "Realiseren",
+              cijfersVanPeriode["REA"][0],
+              cijfersVanPeriode["REA"][1],
+              cijfersVanPeriode["REA"][2],
+            ],
+            // // Plannen en ontwerpen
+            [
+              "P&O",
+              cijfersVanPeriode["PNO"][0],
+              cijfersVanPeriode["PNO"][1],
+              cijfersVanPeriode["PNO"][2],
+            ],
+            // // Testen en Verbeteren
+            [
+              "T&V",
+              cijfersVanPeriode["TNV"][0],
+              cijfersVanPeriode["TNV"][1],
+              cijfersVanPeriode["TNV"][2],
+            ],
+            // // Computervaardigheden
+            [
+              "Computervaardigheden",
+              cijfersVanPeriode["COV"][0],
+              cijfersVanPeriode["COV"][1],
+              cijfersVanPeriode["COV"][2],
+            ],
+          ];
+          // Maar ik gebruik toch liever een 'for ...of'-loop.
+          for (var i = 0; i <= cijfersInTabelVormigeArray.length; i++) {
+            var ditVak = cijfersInTabelVormigeArray[i];
+            var vaknaam = ditVak[0];
+            var cijferHuiswerk = ditVak[1];
+            var cijferPraktijk = ditVak[2];
+            var cijferProject = ditVak[3];
+            // We maken hier een variabele. Browsers als Firefox evalueren en corrigeren geinjecteerde HTML, wat betekend dat als we dit direct invoegen, de <tr> al gesloten is voor haar inhoud.
+            var inTePlakken = "<tr>";
+            // Hier laten we de while loop eens zien
+            var j = 0;
+            while (j < ditVak.length) {
+              inTePlakken += "<td>" + ditVak[j] + "</td>";
+              j++;
+            }
+            inTePlakken += "</tr>";
 
-          `;
+            document.getElementById("workingResult").innerHTML += inTePlakken;
+          }
+        }
+        LaadDeTabel(1);
       }
+      // Voor debugging, plaats de globaleVariabelen in window.
+      window.globaleVariabelen = globaleVariabelen;
     })(JSON.parse(request.responseText));
   } else {
     window.location.assign("/pages/error.html");
