@@ -11,12 +11,12 @@ var menuItems = [
     "link": "/"
   },
   {
-    "title": "About me",
+    "title": "Over mij",
     "link": "/pages/aboutme.html"
   },
   {
-    "title": "Results",
-    "link": "/pages/aboutme/results.html"
+    "title": "Cijfers",
+    "link": "/pages/aboutme/Cijfers.html"
   }
 ];
 
@@ -72,14 +72,14 @@ for (item of menuItems)
   menu.appendChild(menuItem);
 }
 
-if (pageTitle === "Results")
+if (pageTitle === "Cijfers")
 {
   console.log("This is the results page...");
   var mainElem = document.querySelector("main>div");
   function LaadDeTabel()
   {
     mainElem.innerHTML =
-      '<table><thead><tr><td></td><td>Huiswerk</td><td>Praktijk</td><td>Project</td></tr></thead><tbody id="workingResult"></tbody></table>';
+      '<table><thead><tr><td></td><td>Huiswerk</td><td>Praktijk</td><td>Project</td><td ><button onclick="berekenGemiddeld()">Gemiddeld</button></td></tr></thead><tbody id="workingResult"></tbody></table>';
     // Omdat ik alle uitleg zag werken met een Array in deze vorm, wat niet per se super handig is als je met data werkt... Heb ik het ook gedaan.
     // Hier worden de cijfers dus in een array in een array gestopt.
     // // Realiseren
@@ -89,6 +89,7 @@ if (pageTitle === "Results")
         schoolResultaten["REA"][0],
         schoolResultaten["REA"][1],
         schoolResultaten["REA"][2],
+        `<span id="realiserenGemiddeldeSpan"></span>`
       ],
       // // Plannen en ontwerpen
       [
@@ -96,6 +97,7 @@ if (pageTitle === "Results")
         schoolResultaten["PNO"][0],
         schoolResultaten["PNO"][1],
         schoolResultaten["PNO"][2],
+        `<span id="poGemiddeldeSpan"></span>`
       ],
       // // Testen en Verbeteren
       [
@@ -103,6 +105,7 @@ if (pageTitle === "Results")
         schoolResultaten["TNV"][0],
         schoolResultaten["TNV"][1],
         schoolResultaten["TNV"][2],
+        `<span id="tvGemiddeldeSpan"></span>`
       ],
       // // Computervaardigheden
       [
@@ -110,6 +113,7 @@ if (pageTitle === "Results")
         schoolResultaten["COV"][0],
         schoolResultaten["COV"][1],
         schoolResultaten["COV"][2],
+        `<span id="computervaardighedenGemiddeldeSpan"></span>`
       ],
     ];
     // Maar ik gebruik toch liever een 'for ...of'-loop.
@@ -132,4 +136,8 @@ if (pageTitle === "Results")
     }
   }
   LaadDeTabel(1);
+}
+function berekenGemiddeld()
+{
+
 }
