@@ -1,0 +1,20 @@
+/* 
+    Author: MLC Bloeiman <@strawmelonjuice, mar@strawmelonjuice.com> 
+    Date: <date>
+    
+    Stylesheet voor "odd ones out" binnen project
+
+*/
+
+/* Tabellen worden ietsje te breed op mobieltjes. */
+table {
+  font-size: 0.6rem;
+  max-width: 60vw;
+}
+
+/* Maar niet per sé op andere schermen */
+@media screen and (orientation: landscape) and (min-width: 1000px) {
+  table {
+    font-size: inherit;
+  }
+}

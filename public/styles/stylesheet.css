@@ -5,11 +5,15 @@
     Stylesheet voor project
 
 */
-@import url(/styles/customstyles.css);
+/* Hier importeren we de 'bijzondere stylesheets. Deze zouden ook per pagina "on-demand" kunnen worden geimporteerd. Maar ik ben daar toch effe te lui voor. */
+/* #@css:im01 */
+/* // Korte samenvattings blokjes */
+@import url(/styles/shrtsmmry.css);
+/* // Tabel bij resultaten */
+@import url(/styles/resultatentabel.css);
 
 /** Color palette */
-:root
-{
+:root {
   /* Dark-mode first design principle, even though my light mode is pretty great! */
   --page-background-color: #231820;
   --header-background-color: #800046;
@@ -21,8 +25,7 @@
   --bottom-menubar-background-color: #b38888;
   --bottom-menubar-text-color: var(--main-section-text-color);
 
-  @media (prefers-color-scheme: light)
-  {
+  @media (prefers-color-scheme: light) {
     --page-background-color: #b88f9d;
     --header-background-color: #7c5e64;
     --main-background-color: #e0e1ec;
@@ -37,38 +40,38 @@
   --header-height: 4vh;
 }
 
-@font-face
-{
+/* #@css:im01 */
+@font-face {
   font-family: "Lexend";
   src: url(../fonts/Lexend/Lexend-VariableFont_wght.ttf);
 }
 
-@font-face
-{
+/* #@css:im01 */
+@font-face {
   font-family: "Josefin Sans";
   src: url(../fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf);
 }
 
-@font-face
-{
+/* #@css:im01 */
+@font-face {
   font-family: "Fira Sans";
   src: url(../fonts/Fira_Sans/FiraSans-Regular.ttf);
 }
 
-@font-face
-{
+/* #@css:im01 */
+@font-face {
   font-family: "Gantari";
   src: url(../fonts/Gantari/Gantari-VariableFont_wght.ttf);
 }
 
-@font-face
-{
+/* #@css:im01 */
+@font-face {
   font-family: "Syne";
   src: url(../fonts/Syne/Syne-VariableFont_wght.ttf);
 }
 
-body
-{
+body {
+  /* #@css:ca19 */
   background-color: var(--page-background-color);
   font-family: "Lexend", "Josefin Sans", "Fira Sans";
   display: block;
@@ -81,19 +84,21 @@ body
   height: 100%;
 }
 
+:root {
+  --special-font-family: "Gantari", "Syne";
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-.speciaal
-{
-  font-family: "Gantari", "Syne";
+.speciaal {
+  font-family: var(--special-font-family);
 }
 
-main
-{
+main {
   display: block;
   padding: 0;
   margin: 0;
@@ -109,27 +114,26 @@ main
   width: 90vw;
   height: calc(90vh - var(--header-height) - var(--footer-height));
 
-  @media screen and (orientation: landscape) and (min-width: 1000px)
-  {
+  @media screen and (orientation: landscape) and (min-width: 1000px) {
     width: 90vw;
     height: calc(87vh - var(--header-height) - var(--footer-height));
   }
 
-  div
-  {
+  /* #@css:sel01 */
+  > div {
     background-color: var(--main-background-color);
+    /* #@css:ca92 */
     color: var(--main-text-color);
     height: 95%;
     border-radius: 10px;
-    width: 85VW;
+    width: 85vw;
     overflow-y: auto;
     margin: auto;
     padding: 1rem;
   }
 }
 
-header
-{
+header {
   position: fixed;
   /* Mobile/default top distance */
   top: 1rem;
@@ -138,8 +142,7 @@ header
   /* Mobile/default width */
   width: 85vw;
 
-  @media screen and (orientation: landscape) and (min-width: 1000px)
-  {
+  @media screen and (orientation: landscape) and (min-width: 1000px) {
     /* Desktop top distance */
     top: 0.5cm;
     /* Desktop left distance */
@@ -157,8 +160,7 @@ header
   padding: 2vh;
   display: block;
 
-  h1
-  {
+  h1 {
     font-size: 2em;
     line-height: var(--header-height);
     margin: 0;
@@ -167,8 +169,7 @@ header
   }
 }
 
-footer
-{
+footer {
   position: fixed;
   right: 0;
   bottom: 0;
@@ -182,8 +183,8 @@ footer
   overflow: clip;
 }
 
-#menu
-{
+/* #@css:sel04 */
+#menu {
   background-color: var(--bottom-menubar-background-color);
   color: var(--bottom-menubar-text-color);
   width: 80vw;
@@ -193,13 +194,11 @@ footer
   display: block;
   float: right;
 
-  #closemenu
-  {
+  #closemenu {
     display: none;
   }
 
-  #openmenu
-  {
+  #openmenu {
     display: block;
     padding: 14px 16px;
     text-decoration: none;
@@ -211,8 +210,7 @@ footer
     font-weight: bold;
   }
 
-  nav
-  {
+  nav {
     padding: 0;
     margin: 0;
     display: none;
@@ -221,8 +219,7 @@ footer
     overflow: hidden;
   }
 
-  nav ul
-  {
+  nav ul {
     padding: 0;
     margin: 0;
     height: var(--footer-height);
@@ -231,8 +228,7 @@ footer
     float: right;
   }
 
-  nav ul li
-  {
+  nav ul li {
     margin: 0;
     line-height: calc(var(--footer-height) / 2);
     list-style-type: none;
@@ -242,63 +238,52 @@ footer
     text-align: center;
   }
 
-  nav ul li a
-  {
+  nav ul li a {
     display: block;
     padding: 14px 16px;
     color: var(--bottom-menubar-text-color);
     text-decoration: none;
   }
 
-  nav ul li.active
-  {
+  nav ul li.active {
     background-color: var(--header-background-color);
 
-    a
-    {
+    a {
       color: var(--header-text-color);
     }
   }
 
-  nav ul li:hover
-  {
+  nav ul li:hover {
     background-color: var(--main-text-color);
   }
 
   /* Mobile-first: Exceptions to make when not using a mobile screen. */
-  @media screen and (orientation: landscape) and (min-width: 1000px)
-  {
-    #openmenu
-    {
+  @media screen and (orientation: landscape) and (min-width: 1000px) {
+    #openmenu {
       display: none;
     }
 
-    nav
-    {
+    nav {
       display: block;
     }
   }
 }
 
-
 /* Alleen op mobiel willen we het menu uitklappen. Eerder was dit ook op desktop, maar dat is nachtmerrie materiaal. */
-@media only screen and (max-device-width: 900px)
-{
-  #menu.ready.unfolded
-  {
+@media only screen and (max-device-width: 900px) {
+  #menu.ready.unfolded {
     display: block;
     position: fixed;
     right: 0px;
     bottom: 0px;
-    height: 70VH;
-    width: 80VW;
+    height: 70vh;
+    width: 80vw;
     z-index: 10;
     border-radius: 30px;
     overflow: clip;
   }
 
-  #menu.ready.unfolded nav
-  {
+  #menu.ready.unfolded nav {
     position: absolute;
     left: 0;
     display: block;
@@ -306,8 +291,7 @@ footer
     width: 100%;
   }
 
-  #menu.unfolded #closemenu
-  {
+  #menu.unfolded #closemenu {
     height: var(--footer-height);
     line-height: var(--footer-height);
     width: 100%;
@@ -319,8 +303,7 @@ footer
     display: block;
   }
 
-  #menu.ready.unfolded nav ul
-  {
+  #menu.ready.unfolded nav ul {
     height: 100%;
     margin: auto;
     width: 100%;
@@ -328,30 +311,31 @@ footer
     overflow: auto;
   }
 
-  #menu.ready.unfolded nav ul li
-  {
+  #menu.ready.unfolded nav ul li {
     margin: auto;
     width: 100%;
     float: none;
     overflow: auto;
   }
 
-  #menu.unfolded #openmenu
-  {
+  #menu.unfolded #openmenu {
     display: none;
   }
-
 }
 
 #menu:hover,
-#menu nav:hover
-{
+#menu nav:hover {
   transition: all ease 4s;
 }
 
 table,
-td
-{
+td {
   border-collapse: collapse;
   border: currentColor solid 2px;
+}
+
+/* #@css:sel03 */
+p.opening::first-letter {
+  font-family: var(--special-font-family);
+  font-size: 2em;
 }
