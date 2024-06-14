@@ -7,25 +7,25 @@
 */
 var menuItems = [
   {
-    "title": "Home",
-    "link": "/"
+    title: "Home",
+    link: "/",
   },
   {
-    "title": "Over mij",
-    "link": "/pages/aboutme.html"
+    title: "Over mij",
+    link: "/pages/aboutme.html",
   },
   {
-    "title": "Cijfers",
-    "link": "/pages/aboutme/Cijfers.html"
-  }
+    title: "Cijfers",
+    link: "/pages/aboutme/results.html",
+  },
 ];
-
+// Dit zijn schoolresultaten van het bord. Ik was te lui om de actuale cijfers te pakken. Zal ik later wel aanpassen.
 var schoolResultaten = {
-  "REA": [5.0, 8.0, 7.3],
-  "PNO": [7.1, 7.2, 7.5],
-  "TNV": [1.8, 5.1, 2.7],
-  "COV": [9.8, 9.3, 4.7]
-}
+  REA: [5.0, 8.0, 7.3],
+  PNO: [7.1, 7.2, 7.5],
+  TNV: [1.8, 5.1, 2.7],
+  COV: [9.8, 9.3, 4.7],
+};
 
 var pageTitle = (() =>
 {
@@ -89,7 +89,7 @@ if (pageTitle === "Cijfers")
         schoolResultaten["REA"][0],
         schoolResultaten["REA"][1],
         schoolResultaten["REA"][2],
-        `<span id="realiserenGemiddeldeSpan"></span>`
+        '<span id="realiserenGemiddeldeSpan"></span>',
       ],
       // // Plannen en ontwerpen
       [
@@ -97,7 +97,7 @@ if (pageTitle === "Cijfers")
         schoolResultaten["PNO"][0],
         schoolResultaten["PNO"][1],
         schoolResultaten["PNO"][2],
-        `<span id="poGemiddeldeSpan"></span>`
+        '<span id="poGemiddeldeSpan"></span>',
       ],
       // // Testen en Verbeteren
       [
@@ -105,7 +105,7 @@ if (pageTitle === "Cijfers")
         schoolResultaten["TNV"][0],
         schoolResultaten["TNV"][1],
         schoolResultaten["TNV"][2],
-        `<span id="tvGemiddeldeSpan"></span>`
+        '<span id="tvGemiddeldeSpan"></span>',
       ],
       // // Computervaardigheden
       [
@@ -113,7 +113,7 @@ if (pageTitle === "Cijfers")
         schoolResultaten["COV"][0],
         schoolResultaten["COV"][1],
         schoolResultaten["COV"][2],
-        `<span id="computervaardighedenGemiddeldeSpan"></span>`
+        '<span id="computervaardighedenGemiddeldeSpan"></span>',
       ],
     ];
     // Maar ik gebruik toch liever een 'for ...of'-loop.
@@ -137,7 +137,4 @@ if (pageTitle === "Cijfers")
   }
   LaadDeTabel(1);
 }
-function berekenGemiddeld()
-{
-
-}
+function berekenGemiddeld() { }
