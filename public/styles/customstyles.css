@@ -9,6 +9,7 @@
 /* About me-TLDR blokje */
 p.tldr
 {
+    padding: 15px;
     --tldr-height: 16px;
     font-size: 95%;
     background-color: var(--color-slot-15);
@@ -21,6 +22,7 @@ p.tldr
     color: var(--color-slot-16);
     font-family: 'Ubuntu Mono', monospace;
     width: fit-content;
+    min-width: 30%;
     height: var(--tldr-height);
     margin-left: auto;
     margin-right: auto;
@@ -29,8 +31,10 @@ p.tldr
 
 p.tldr::before
 {
-    content: "TLDR: ⬇️";
+    content: "Kort samengevat: ⬇️";
     position: absolute;
+    width: fit-content;
+    max-width: 30%;
     top: var(--tldr-height);
     /* left: 100%; */
     margin-top: -5px;
