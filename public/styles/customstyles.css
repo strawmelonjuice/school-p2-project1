@@ -23,7 +23,8 @@ p.tldr
     font-family: 'Ubuntu Mono', monospace;
     width: fit-content;
     min-width: 30%;
-    height: var(--tldr-height);
+    height: fit-content;
+    /* height: var(--tldr-height); */
     margin-left: auto;
     margin-right: auto;
     margin-top: var(--tldr-height);
@@ -39,4 +40,21 @@ p.tldr::before
     /* left: 100%; */
     margin-top: -5px;
     border-width: 5px;
+    font-size: 0.6rem;
+}
+
+/* Tabellen worden ietsje te breed op mobieltjes. */
+table
+{
+    font-size: 0.6rem;
+    max-width: 60VW;
+}
+
+/* Maar niet per sé op andere schermen */
+@media screen and (orientation: landscape) and (min-width: 1000px)
+{
+    table
+    {
+        font-size: inherit;
+    }
 }

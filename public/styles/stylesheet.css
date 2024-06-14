@@ -121,7 +121,7 @@ main
     color: var(--main-text-color);
     height: 95%;
     border-radius: 10px;
-    width: 95%;
+    width: 85VW;
     overflow-y: auto;
     margin: auto;
     padding: 1rem;
@@ -182,7 +182,7 @@ footer
   overflow: clip;
 }
 
-#menu:not(.unfolded)
+#menu
 {
   background-color: var(--bottom-menubar-background-color);
   color: var(--bottom-menubar-text-color);
@@ -282,105 +282,65 @@ footer
 
 
 /* Alleen op mobiel willen we het menu uitklappen. Eerder was dit ook op desktop, maar dat is nachtmerrie materiaal. */
-@media
+@media only screen and (max-device-width: 900px)
 {
   #menu.ready.unfolded
   {
-    border-radius: 30px;
+    display: block;
     position: fixed;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 5;
-    background-color: var(--bottom-menubar-background-color);
-    color: var(--bottom-menubar-text-color);
-
-    #closemenu
-    {
-      cursor: pointer;
-      position: absolute;
-      right: 10vw;
-      font-size: 2em;
-      top: 10vh;
-      padding: 0.5em;
-      margin: 0%;
-      width: 3rem;
-      height: 3rem;
-      border-radius: 100%;
-    }
-
-    #openmenu
-    {
-      display: none;
-    }
-
-    nav
-    {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      /* Default/mobile height */
-      height: 70vh;
-      /* Default/mobile width */
-      width: 90vw;
-
-      @media screen and (orientation: landscape) and (min-width: 1000px)
-      {
-        /* Desktop  */
-        height: 60vh;
-        width: 60vw;
-      }
-
-      overflow-y: auto;
-    }
-
-    nav ul
-    {
-      padding: 0;
-      margin: 0;
-      width: 100%;
-    }
-
-    nav ul li
-    {
-      margin: 0;
-      line-height: calc(var(--footer-height) / 2);
-      list-style-type: none;
-      height: var(--footer-height);
-      width: 100%;
-      text-align: center;
-    }
-
-    nav ul li.active a::after
-    {
-      content: " (current)";
-      margin: auto;
-      /* font-size: 1.5em; */
-    }
-
-    nav ul li a
-    {
-      display: block;
-      padding: 14px 16px;
-      color: var(--bottom-menubar-text-color);
-      text-decoration: none;
-    }
-
-    nav ul li:hover,
-    #closemenu:hover
-    {
-      background-color: var(--main-text-color);
-    }
-
-    #closemenu:hover
-    {
-      color: red;
-    }
+    right: 0px;
+    bottom: 0px;
+    height: 70VH;
+    width: 80VW;
+    z-index: 10;
+    border-radius: 30px;
+    overflow: clip;
   }
+
+  #menu.ready.unfolded nav
+  {
+    position: absolute;
+    left: 0;
+    display: block;
+    height: calc(100% - var(--footer-height));
+    width: 100%;
+  }
+
+  #menu.unfolded #closemenu
+  {
+    height: var(--footer-height);
+    line-height: var(--footer-height);
+    width: 100%;
+    font-size: 3em;
+    position: absolute;
+    bottom: 0px;
+    background-color: var(--header-text-color);
+    color: var(--header-background-color);
+    display: block;
+  }
+
+  #menu.ready.unfolded nav ul
+  {
+    height: 100%;
+    margin: auto;
+    width: 100%;
+    float: none;
+    overflow: auto;
+  }
+
+  #menu.ready.unfolded nav ul li
+  {
+    margin: auto;
+    width: 100%;
+    float: none;
+    overflow: auto;
+  }
+
+  #menu.unfolded #openmenu
+  {
+    display: none;
+  }
+
 }
 
 #menu:hover,
