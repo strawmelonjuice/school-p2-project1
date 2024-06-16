@@ -8,7 +8,8 @@
 
 /* About me-TLDR blokje */
 /* #@css:sel02 */
-p.tldr {
+p.tldr
+{
   padding: 15px;
   --tldr-height: 16px;
   font-size: 95%;
@@ -46,7 +47,8 @@ p.tldr::before {
 
 /* Ik zet hier ook de afbeelding van die pagina in */
 /* Mobile-firsting: */
-#strmlnjcelogo > img {
+#strmlnjcelogo > img
+{
   max-width: 100%;
   border-radius: 50%;
   margin: 0 auto;
@@ -54,12 +56,15 @@ p.tldr::before {
 }
 
 /* en zo ook voor andere schermen */
-@media screen and (orientation: landscape) and (min-width: 1000px) {
-  #strmlnjcelogo > img {
+@media screen and (orientation: landscape) and (min-width: 1000px)
+{
+  #strmlnjcelogo > img
+  {
     width: 100%;
   }
 
-  #strmlnjcelogo {
+  #strmlnjcelogo
+  {
     margin-top: 1rem;
     max-width: min-content;
     width: 25vw;
