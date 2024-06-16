@@ -18,6 +18,10 @@ var menuItems = [
     title: "Cijfers",
     link: "/pages/aboutme/results.html",
   },
+  {
+    title: "Projecten",
+    link: "/pages/aboutme/projects.html",
+  },
 ];
 // Dit zijn schoolresultaten van het bord. Ik was te lui om de actuale cijfers te pakken. Zal ik later wel aanpassen.
 var schoolResultaten = {

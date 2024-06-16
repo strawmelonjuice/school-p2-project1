@@ -7,35 +7,45 @@
 */
 /* Hier importeren we de 'bijzondere stylesheets. Deze zouden ook per pagina "on-demand" kunnen worden geimporteerd. Maar ik ben daar toch effe te lui voor. */
 /* #@css:im01 */
-/* // Korte samenvattings blokjes */
-@import url(/styles/shrtsmmry.css);
+/* // About me pagina */
+@import url(/styles/aboutme.css);
 /* // Tabel bij resultaten */
 @import url(/styles/resultatentabel.css);
+/* // Projectenpagina */
+@import url(/styles/projecten.css);
 
 /** Color palette */
 :root
 {
   /* Dark-mode first design principle, even though my light mode is pretty great! */
   --page-background-color: #231820;
-  --header-background-color: #800046;
+  --header-background-color: rgb(128, 0, 70);
+  --header-background-color-50: rgb(128, 0, 70, 0.5);
   --header-text-color: #e0e1ec;
   --main-background-color: #4e4d4d;
   --main-text-color: #fccbcb;
   --main-section-background-color: var(--main-text-color);
   --main-section-text-color: black;
-  --bottom-menubar-background-color: #b38888;
+  --bottom-menubar-background-color: rgb(179, 136, 136);
+  --bottom-menubar-background-color-50: rgb(179, 136, 136, 0.5);
   --bottom-menubar-text-color: var(--main-section-text-color);
+  --sect-text-color: var(--main-background-color);
+  --accentedborderblue: #353f87;
 
   @media (prefers-color-scheme: light)
   {
     --page-background-color: #b88f9d;
-    --header-background-color: #7c5e64;
+    --header-background-color: rgb(124, 94, 100);
+    --header-background-color-50: rgb(124, 94, 100, 0.5);
     --main-background-color: #e0e1ec;
     --main-text-color: #7c5e64;
     --main-section-background-color: var(--bottom-menubar-background-color);
     --main-section-text-color: black;
-    --bottom-menubar-background-color: #dab2bb;
+    --bottom-menubar-background-color: rgb(218, 178, 187);
+    --bottom-menubar-background-color-50: rgb(218, 178, 187, 0.5);
     --bottom-menubar-text-color: var(--main-section-text-color);
+    --sect-text-color: var(--main-text-color);
+    --accentedborderblue: #5a68cc;
   }
 
   --footer-height: 7vh;
@@ -227,6 +237,7 @@ footer
     height: var(--footer-height);
     width: 20%;
     font-size: 30px;
+    /* #@css:cal10-2 Tekst wordt hier vet gedrukt. */
     font-weight: bold;
   }
 
@@ -271,7 +282,7 @@ footer
 
   nav ul li.active
   {
-    background-color: var(--header-background-color);
+    background-color: var(--header-background-color-50);
 
     a
     {
@@ -282,6 +293,8 @@ footer
   nav ul li:hover
   {
     background-color: var(--main-text-color);
+    /* #@css:cal10-3 Tekst wordt hiermee onderstreept met stippeltjeslijn */
+    text-decoration: underline dotted currentColor;
   }
 
   /* Mobile-first: Exceptions to make when not using a mobile screen. */

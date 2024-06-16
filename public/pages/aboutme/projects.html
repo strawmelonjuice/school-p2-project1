@@ -1,0 +1,147 @@
+<!doctype html>
+<!-- 
+    Auteur: MLC Bloeiman <@strawmelonjuice, mar@strawmelonjuice.com>
+    Datum: <datum>
+    Periode: 2
+    
+    Praktijk project -- projectenpagina
+ -->
+<html lang="nl">
+    <head>
+        <title>Projecten&ensp;&mdash;&ensp;Mar&#39;s&nbsp;site</title>
+        <meta charset="utf-8" />
+        <!-- Viewport definition -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Stylesheet importeren -->
+        <link rel="stylesheet" href="/styles/stylesheet.css" />
+        <script defer src="/scripts/script.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <h1>
+                <!-- Edit me in <title> -->
+            </h1>
+        </header>
+        <main>
+            <div>
+                <details class="active-projects projects" open>
+                    <summary>
+                        <h2>Actief</h2>
+                        <p>
+                            Mijn actieve projecten zijn de projecten waar in de komende of afgelopen weken in mijn vrije tijd aan sleutel.
+                        </p>
+                    </summary>
+                    <div class="projectlist">
+                        <section>
+                            <img src="/images/cynthia.svg">
+                            <article>
+                                <a href="https://github.com/strawmelonjuice/CynthiaWebsiteEngine" class="github-link"></a>
+                                <h3>Cynthia</h3>
+                                <details>
+                                    <summary>Cynthia is een CMS, en webserver ontworpen voor documentatie of blogging.</summary>
+                                    <h4>Speerpunten</h4>
+                                    <ul>
+                                        <li>Markdown: Cynthia rendert zelfstandig Markdown-opmaak en plaatst het in handlebars voor conversie naar valide en volwaardige HTML websites.</li>
+                                        <li>Simpliciteit: Cynthia werkt zo veel mogelijk met simpele bestanden, en zo min mogelijk met databases of code.</li>
+                                        <li>Snelheid: Cynthia is gebouwd in Rust, dit maakt stabiliteit en snelheid een voldongen feit, Cynthia probeert alles wat langer kan duren op te vangen in cache.</li>
+                                    </ul>
+                            </article>
+                        </section>
+                        <section>
+                            <img src="/images/luminalogo-1.svg">
+                            <article>
+                                <a href="https://github.com/strawmelonjuice/lumina" class="github-link"></a>
+                                <h3>Lumina (/peonies)</h3>
+                                <details>
+                                    <summary>Lumina is uit de hand gelopen concept voor een sociale-mediawebsite.</summary>
+                                    <p>
+                                        Gedeeltelijk gebouwd zoals Cynthia, is ook Lumina gedreven op snelheid en stabiliteit.
+                                    </p>
+                                    <p>
+                                        Lumina is een concept voor een gedecentraliseerde sociale-mediawebsite, waarbij meerdere <i>instances</i> van de website kunnen bestaan, en met elkaar kunnen communiceren.
+                                    </p>
+                            </article>
+                        </section>
+                        <!-- <section>
+                            <img src="https://placehold.co/200/EEE/31343C.png">
+                            <article>
+                                <h3>Project 3</h3>
+                                <p></p>
+                            </article>
+                        </section> -->
+                    </div>
+                </details>
+                <details class="inactive-projects projects">
+                    <summary>
+                        <h2>Inactief</h2>
+                        <p>
+                            Mijn inactieve projecten zijn projecten waar ik in het verleden aan heb gewerkt, maar die ik niet meer actief onderhoud.
+                            <br>
+                            De meeste van deze projecten wil ik in de toekomst weer op pakken.
+                        </p>
+                    </summary>
+                    <div class="projectlist">
+                        <section>
+                            <img src="/images/ldlogo_446x446.png">
+                            <article>
+                                <h3>Logger-Diary</h3>
+                                <details>
+                                    <summary>Logger-Diary is een project dat ik in 2018 ben begonnen, het is een digitale dagboek app.</summary>
+                                    <p>
+                                        Logger-Diary had een aantal edities, in eerste instantie was het een CLI-applicatie, later is het grafische applicatie geworden.
+                                        <br>
+                                        Kort daarna heeft Logger-Diary een webversie gekregen, en is de eerste hand aan een synchroniserende desktopapplicatie en mobiele applicatie gelegd.
+                                    </p>
+                                    <p>
+                                        Het project is in 2023 gestopt, en is sindsdien ook offline. Zodra het wordt hervat, zal de desktop-applicatie de volle focus krijgen.
+                                    </p>
+                                </details>
+                            </article>
+                        </section>
+                    </div>
+                </details>
+                <details class="school-projects projects">
+                    <summary>
+                        <h2>Voor school</h2>
+                        <p>
+                            Deze opdrachten zijn gemaakt voor school. Ze zijn allemaal afgerond of afgerond genoeg voor oplevering.
+                        </p>
+                    </summary>
+                    <div class="projectlist">
+                        <section>
+                            <img src="/images/belastingdienst.png">
+                            <article>
+                                <h3>Belastingdienst</h3>
+                                <p>Mijn versie van de Belastingdienst-website, in NOS-jeugdjournaal thema.</p>
+                            </article>
+                        </section>
+                        <section>
+                            <img src="/images/dzdb.png">
+                            <article>
+                                <h3>Dierenziekenhuis DB</h3>
+                                <p>Het projectwerkstuk voor P1! Ik en Tristan hebben een eigen versie van de Dierenziekenhuis Den Bosch website gemaakt.</p>
+                            </article>
+                        </section>
+                        <section>
+                            <img src="/images/nlsevlag.png">
+                            <article>
+                                <h3>Vlag van het kikkerland</h3>
+                                <p>In CSS heb ik hier 2 gekleurde divs zo geplaatst dat ze samen met de body altijd een nederlandse vlag vormen.</p>
+                            </article>
+                        </section>
+                    </div>
+                </details>
+            </div>
+        </main>
+        <footer>
+            <div id="menu" class="ready">
+                <span id="openmenu">MENU&#9776;</span>
+                <span id="closemenu">&times;</span>
+                <nav>
+                    <ul id="menu-items"></ul>
+                </nav>
+            </div>
+        </footer>
+    </body>
+</html>

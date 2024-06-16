@@ -1,0 +1,100 @@
+/* 
+    Author: MLC Bloeiman <@strawmelonjuice, mar@strawmelonjuice.com> 
+    Date: <date>
+    
+    Stylesheet voor projectenpagina.
+
+*/
+
+:root
+{
+    --github-mark-white-svg: url("/images/github-mark-white.svg");
+    --github-mark-svg: url("/images/github-mark.svg");
+    --github-logo: var(--github-mark-white-svg);
+
+    @media (prefers-color-scheme: light)
+    {
+        --github-logo: var(--github-mark-svg);
+    }
+
+}
+
+
+
+
+details.projects > summary > h1,
+details.projects > summary > h2,
+details.projects > summary > h3,
+details.projects > summary > h4,
+details.projects > summary > h5,
+details.projects > summary > h6
+{
+    /* Dit zorgt ervoor dat koptekst gewoon een een details.projects > summary > vak past. */
+    width: fit-content;
+    display: inline-block;
+}
+
+div.projectlist
+{
+    /* Dit zorgt ervoor dat de projecten netjes naast elkaar staan. */
+    width: fit-content;
+    margin: auto auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center space-between;
+    background-color: var(--bottom-menubar-background-color-50);
+    color: var(--sect-text-color);
+    border-radius: 0.5rem;
+}
+
+div.projectlist > section
+{
+    /* Dit zorgt ervoor dat de projecten netjes naast elkaar staan. */
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    max-width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--bottom-menubar-background-color);
+}
+
+@media screen and (orientation: landscape) and (min-width: 1000px)
+{
+    div.projectlist > section
+    {
+        width: 20rem;
+    }
+
+}
+
+
+div.projectlist > section > img
+{
+    /* Dit zorgt ervoor dat de afbeeldingen aan de linkerhelft blijven staan */
+    float: left;
+    max-width: 30%;
+    border: dashed var(--accentedborderblue) 2px;
+    margin: 2em;
+}
+
+div.projectlist > section > article
+{
+    /* Dit zorgt ervoor dat de beschrijvingen aan de rechterhelft blijven staan */
+    width: fit-content;
+    max-width: 100%;
+}
+
+a.github-link
+{
+    /* Dit zorgt ervoor dat de github links netjes onderaan de projecten staan */
+    width: 1.2em;
+    height: 1.2em;
+    background-image: var(--github-logo);
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: var(--sect-text-color);
+    text-decoration: none;
+    float: right;
+}
