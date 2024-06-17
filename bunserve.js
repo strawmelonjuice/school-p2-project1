@@ -4,18 +4,22 @@ console.log(
 );
 Bun.serve({
   port: 3000,
-  async fetch(req) {
+  async fetch(req)
+  {
     let filePath;
-    if (new URL(req.url).pathname === "/") {
+    if (new URL(req.url).pathname === "/")
+    {
       filePath = BASE_PATH + "/index.html";
-    } else {
+    } else
+    {
       filePath = BASE_PATH + new URL(req.url).pathname;
     }
     console.log("Requesting file", filePath);
     const file = Bun.file(filePath);
     return new Response(file);
   },
-  error() {
+  error()
+  {
     return new Response(null, { status: 404 });
   },
 });
