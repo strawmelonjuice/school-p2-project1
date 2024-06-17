@@ -5,6 +5,11 @@
     <Subject>
 
 */
+/**
+ * ${1:Description placeholder}
+ *
+ * @type {{}\}
+ */
 var menuItems = [
   {
     title: "Home",
@@ -23,7 +28,11 @@ var menuItems = [
     link: "/pages/aboutme/projects.html",
   },
 ];
-// Dit zijn schoolresultaten van het bord. Ik was te lui om de actuale cijfers te pakken. Zal ik later wel aanpassen.
+/**
+ * Cijferlijst
+ *
+ * @type {{ REA: number[]; PNO: number[]; TNV: number[]; COV: number[]; \}\}
+ */
 var schoolResultaten = {
   REA: [8.0, 1.0, 6.7],
   PNO: [9.6, 1.1, 2.8],
@@ -31,6 +40,11 @@ var schoolResultaten = {
   COV: [3.0, 1.0, 2.7],
 };
 
+/**
+ * ${1:Description placeholder}
+ *
+ * @type {*}
+ */
 var pageTitle = (() =>
 {
   var element = document.createElement("p");
@@ -41,6 +55,11 @@ var pageTitle = (() =>
 })();
 document.querySelector("header h1").innerText = pageTitle;
 
+/**
+ * ${1:Description placeholder}
+ *
+ * @type {*}
+ */
 var menu = document.getElementById("menu-items");
 
 document.getElementById("closemenu").addEventListener("click", () =>
@@ -141,6 +160,9 @@ if (pageTitle === "Cijfers")
   }
   LaadDeTabel(1);
 }
+/**
+ * ${1:Description placeholder}
+ */
 function berekenGemiddeld()
 {
   console.log("Bereken gemiddeldes...");
@@ -150,8 +172,7 @@ function berekenGemiddeld()
       // Cijfer praktijk.
       schoolResultaten["REA"][1] +
       // Het project, laatste cijfer in de array, tekt 50% van het eindcijfer.
-      schoolResultaten["REA"][2] +
-      schoolResultaten["REA"][2]) /
+      (schoolResultaten["REA"][2] * 2)) /
     4;
   document.getElementById("realiserenGemiddeldeSpan").innerText =
     gemiddeldeRealiseren.toFixed(1);
@@ -162,8 +183,7 @@ function berekenGemiddeld()
       // Cijfer praktijk.
       schoolResultaten["PNO"][1] +
       // Het project, laatste cijfer in de array, tekt 50% van het eindcijfer.
-      schoolResultaten["PNO"][2] +
-      schoolResultaten["PNO"][2]) /
+      (schoolResultaten["PNO"][2] * 2)) /
     4;
   document.getElementById("poGemiddeldeSpan").innerText =
     gemiddeldePO.toFixed(1);
@@ -174,11 +194,10 @@ function berekenGemiddeld()
       // Cijfer praktijk.
       schoolResultaten["TNV"][1] +
       // Het project, laatste cijfer in de array, tekt 50% van het eindcijfer.
-      schoolResultaten["TNV"][2] +
-      schoolResultaten["TNV"][2]) /
+      (schoolResultaten["TNV"][2] * 2)) /
     4;
   document.getElementById("tvGemiddeldeSpan").innerText =
-    gemiddeldeRealiseren.toFixed(1);
+    gemiddeldeTV.toFixed(1);
 
   var gemiddeldeRealiseren =
     // Cijfer oefeningen.
@@ -186,8 +205,7 @@ function berekenGemiddeld()
       // Cijfer praktijk.
       schoolResultaten["COV"][1] +
       // Het project, laatste cijfer in de array, tekt 50% van het eindcijfer.
-      schoolResultaten["COV"][2] +
-      schoolResultaten["COV"][2]) /
+      (schoolResultaten["COV"][2] * 2)) /
     4;
   document.getElementById("computervaardighedenGemiddeldeSpan").innerText =
     gemiddeldeRealiseren.toFixed(1);
